@@ -318,7 +318,6 @@
       <li><a href="#s8">વિશેષ-દિવસ ધજા</a></li>
       <li><a href="#s9">સ્થિતિ બદલવી</a></li>
       <li><a href="#s10">કેલેન્ડર અને રિમાઇન્ડર</a></li>
-      <li><a href="#s11">ટેકનિકલ નોંધ</a></li>
     </ol>
   </nav>
 
@@ -515,26 +514,6 @@
           <em>આજ થી 3 દિવસ</em>ની અંદર હોય, તો એડમિનને <strong>અને</strong> તે પ્રાયોજન કરનાર
           સેવાર્થીના લોગિનને 🚩 રિમાઇન્ડર દેખાય. “View details →” દબાવતાં ધજા પૂજા પાનું ખૂલે.</li>
       </ul>
-    </section>
-
-    <section id="s11">
-      <div class="sec-head"><span class="sec-num">11</span><h2 class="sec-title">ટેકનિકલ નોંધ</h2></div>
-      <p class="lead">ડેવલપર માટે — ટૂંકમાં. પૂરી વિગત
-        <span class="mono">docs/dhaja-pooja-guide-gu.md</span> અને કમિટ સંદેશમાં.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>સ્તર</th><th>ક્યાં</th></tr></thead>
-          <tbody>
-            <tr><td>સ્કીમા</td><td><span class="mono">server/db/migrations/010_dhaja_pooja.sql</span> — <span class="mono">dhaja_campaigns</span>, <span class="mono">dhaja_poojas</span>, partial-unique <span class="mono">ux_dhaja_seq (campaign_id, seq_no)</span>, <span class="mono">v_cal_dhaja</span>, <span class="mono">v_person_links</span>માં <span class="mono">dhaja_sponsor</span> શાખા</td></tr>
-            <tr><td>ગણક</td><td><span class="mono">DHC-###</span> (અભિયાન), <span class="mono">DHJ-###</span> (પ્રાયોજન) — <span class="mono">server/db/seed/platform.js</span></td></tr>
-            <tr><td>દાન શ્રેણી</td><td><span class="mono">DCT-011</span> “Dhaja Pooja Seva” (રોકડ) — <span class="mono">reference-data.js</span></td></tr>
-            <tr><td>API</td><td><span class="mono">server/routes/dhaja.js</span> → <span class="mono">/api/dhaja</span>. વાંચન = કોઈ પણ સત્ર; લેખન = એડમિન.</td></tr>
-            <tr><td>દાતા glue</td><td><span class="mono">server/services/donorStore.js</span> — <span class="mono">ensureDonorForDevotee()</span></td></tr>
-            <tr><td>ફ્રન્ટ-એન્ડ</td><td><span class="mono">public/js/dhaja.js</span> + <span class="mono">-ui.js</span> + <span class="mono">-forms.js</span>, <span class="mono">#page-dhaja</span>, <span class="mono">hydrateDhaja()</span>, કેલેન્ડર + રિમાઇન્ડર + i18n (en/hi/gu)</td></tr>
-            <tr><td>ચકાસણી</td><td>fresh-DB migrate/seed · 42-check e2e harness (લાઇફસાઇકલ + concurrency + cross-module + કેલેન્ડર + રિમાઇન્ડર) · regression suites · બ્રાઉઝર રાઉન્ડ-ટ્રિપ</td></tr>
-          </tbody>
-        </table>
-      </div>
     </section>
   </main>
 </div>
